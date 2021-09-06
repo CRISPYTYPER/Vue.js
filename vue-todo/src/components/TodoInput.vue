@@ -18,7 +18,7 @@ export default {
         addTodo() {
             if(this.newTodoItem !== "") {
                 var value = this.newTodoItem && this.newTodoItem.trim();
-                localStorage.setItem(value, value);
+                this.$emit('addTodo', value); //하위 컴포넌트에서 상위 컴포넌트로 이벤트 전달
                 this.clearInput();
             }
         },
